@@ -1,7 +1,7 @@
 import kaplay from "kaplay";
 import "kaplay/global"; // uncomment if you want to use without the k. prefix
 
-const k = kaplay();
+const k = kaplay({ scale: 0.7 });
 
 // Load assets
 k.loadRoot("./");
@@ -263,7 +263,7 @@ scene("game", () => {
   // Function to activate ragdoll effect
   function onDeath() {
     dead = true;
-	let music2 = play("menuMusic", { loop: true, volume: 0.1 });
+    let music2 = play("menuMusic", { loop: true, volume: 0.1 });
     if (bikeLoop) {
       bikeLoop.stop();
       bikeLoop = null;
@@ -404,7 +404,7 @@ scene("game", () => {
 
     // Define the click behavior
     startButton.onClick(() => {
-	  music2.stop();
+      music2.stop();
       go("game"); // Reload the "game" scene
     });
 
