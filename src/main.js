@@ -5,7 +5,11 @@ const k = kaplay({ scale: 0.7 });
 
 // Load assets
 k.loadRoot("./");
-k.loadSprite("bike", "sprites/bike.png");
+k.loadSprite("bike1", "sprites/bike.png");
+k.loadSprite("bike2", "sprites/bikeGold.png");
+k.loadSprite("bike3", "sprites/bikeGreen.png");
+k.loadSprite("bike4", "sprites/bikeRed.png");
+
 k.loadSprite("head", "sprites/head.png");
 k.loadSprite("torso", "sprites/torso.png");
 k.loadSprite("arm", "sprites/arm.png");
@@ -186,10 +190,12 @@ scene("game", () => {
     "floor",
   ]);
 
+  let spriteID = getRandomIntBetween(1, 4);
+
   // Create the bike
   let bike = k.add([
     pos(k.width() / 4 + 100, k.height() - 80), // Start above the floor
-    sprite("bike"),
+    sprite(`bike${spriteID}`),
     scale(0.4), // Scale applied after setting origin
     anchor("center"),
     area(),
