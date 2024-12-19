@@ -452,13 +452,13 @@ scene("game", () => {
     // Bike movement control
     if (bike.isGrounded()) {
       if (Math.abs(bike.angle) > 10 && !onRamp) {
-        if (scoreMultiplier > 1) {
+        if (scoreMultiplier > 1.5) {
           score += scoreVariable * scoreMultiplier;
           scoreVariable = 0;
         }
         doingOli = true;
         scoreVariable += Math.max(currentSpeed / 25, 1) * dt();
-        scoreMultiplier = 1;
+        scoreMultiplier = 1.5;
       } else {
         doingOli = false;
         score += scoreVariable * scoreMultiplier;
